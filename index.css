@@ -1,0 +1,107 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  color: black;
+  background-color: gray;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#start {
+  margin: 100px auto;
+}
+
+p {
+  font-weight: bold;
+}
+
+h1 {
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 2em;
+}
+
+h2 {
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+#btn-letsplay {
+  margin-top: 80px;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  width: 300px;
+  height: 55px;
+  background-color: rgba(255, 0, 0, .5);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+button#btn-letsplay:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  background-color: white;
+  width: 100px;
+  height: 150px;
+  margin: 5px;
+  border-radius: 15px;
+}
+
+footer {
+  margin-top: 60px;
+}
+
+button {
+  color: black;
+  font-size: 1.5em;
+  font-weight: bolder;
+  text-align: center;
+  width: 120px;
+  height: 50px;
+  margin-left: 10px;
+  margin-left: 10px;
+  background-color: rgba(255, 0, 0, .5);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+#game {
+  display: none;
+  margin-top: 40px;
+}
+
+#game.active {
+  display: block;
+}
+
+#score {
+  color: white;
+  background-color: rgba(0, 0, 255, .5);
+  margin: 50px auto;
+  width: 200px;
+  border-radius: 30px;
+}
+
+#dealer-score, #player-score {
+  background-color: white;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
