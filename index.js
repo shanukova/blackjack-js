@@ -62,3 +62,19 @@ var countHand = (hand) => {
   }
   return sum;
 }
+
+// Step 5: Add one card to hand, keep it there, and show current score
+var addCard = (hand) => {
+  let newLi = document.createElement("li");
+  let cards = document.getElementById(hand).getElementsByTagName("ul")[0];
+  cards.appendChild(newLi);
+  let card = generateRandomCard(); // object
+  newLi.innerHTML = (card.value + card.suit); // string
+  if (hand == "dealer") {
+    dealerHand.push(card);
+  } else {
+    playerHand.push(card);
+  }
+  document.getElementById("dealer-score").innerHTML = countHand(dealerHand);
+  document.getElementById("player-score").innerHTML = countHand(playerHand);
+}
