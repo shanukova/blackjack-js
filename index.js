@@ -78,3 +78,26 @@ var addCard = (hand) => {
   document.getElementById("dealer-score").innerHTML = countHand(dealerHand);
   document.getElementById("player-score").innerHTML = countHand(playerHand);
 }
+
+// Step 6: Create hit fucntion and stand function to start over
+var hit = () => {
+  addCard("player");
+  if (countHand(playerHand) > 21) {
+    finishGame("You bust!");
+  }
+}
+
+var stand = () => {
+  while (countHand(dealerHand) < 17) {
+    addCard("dealer");
+  }
+  if (countHand(dealerHand) > 21) {
+    finishGame("You won!");
+  } else if (countHand(dealerHand) == countHand(playerHand)) {
+    finishGame("Draw!");
+  } else if (countHand(dealerHand) > countHand(playerHand)) {
+    finishGame("You lost!");
+  } else if (countHand(dealerHand) < countHand(playerHand)) {
+    finishGame("You won!");
+  }
+}
