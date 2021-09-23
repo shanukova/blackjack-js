@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Blackjack Game</title>
+  <meta name="description" content="Blackjack Game in JavaScript">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+  <div id="start">
+    <h1>Welcome to Blackjack Game!</h1>
+    <p>the most widely played casino banking game in the world</p>
+    <button id="btn-letsplay" onclick="letsPlay()">Let's play!</button>
+  </div>
+
+  <div id="game">
+
+    <div id="dealer">
+      <h2>DEALER: <span id="dealer-score"></span></h2>
+      <ul></ul>
+    </div>
+
+    <div id="score">
+      <p id="txt-score"></p>
+    </div>
+
+    <div id="player">
+      <h2>PLAYER: <span id="player-score"></span></h2>
+      <ul></ul>
+    </div>
+
+    <footer>
+      <button id="hit" onclick="hit()">Hit</button>
+      <button id="stand" onclick="stand()">Stand</button>
+    </footer>
+
+  </div>
+
+
+  <script src="main.js"></script>
+</body>
+
+</html>
