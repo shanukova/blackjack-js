@@ -32,3 +32,11 @@ var getDeck = () => {
 }
 
 var newDeck = getDeck();
+
+// Step 3: Get random number from deck and remove it
+var generateRandomCard = () => {
+  let randomIndex = Math.floor(Math.random() * newDeck.length);
+  let card = newDeck[randomIndex];
+  newDeck.splice(randomIndex, 1);
+  return card;
+}
