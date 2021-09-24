@@ -159,3 +159,25 @@ var generateRandomCard = () => {
   newDeck.splice(randomIndex, 1);
   return card;
 }
+
+// Step 4: Count hand value by applying Blackjack rules
+var countHand = (hand) => {
+  let sum = 0;
+  let aces = 0;
+  const JKQ = "JKQ";
+  for (let i = 0; i < hand.length; i++) {
+    var val = hand[i].value;
+    if (JKQ.includes(val)) {
+      sum += 10;
+    } else if (val == "A") {
+      sum += 1;
+      aces++;
+    } else {
+      sum += Number(val);
+    }
+  }
+  if ((aces >= 1) && (sum <= 11)) {
+    sum += 10;
+  }
+  return sum;
+}
