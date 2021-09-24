@@ -137,3 +137,17 @@ const VALUES = [
 ]
 var dealerHand = [];
 var playerHand = [];
+
+// Step 2: Create dec - ordered array of objects
+var getDeck = () => {
+  let deck = [];
+  for (let i = 0; i < SUITS.length; i++) {
+    for (let j = 0; j < VALUES.length; j++) {
+      let card = { value: VALUES[j], suit: SUITS[i] };
+      deck.push(card);
+    }
+  }
+  return deck;
+}
+
+var newDeck = getDeck();
