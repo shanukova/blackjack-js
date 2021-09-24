@@ -85,3 +85,18 @@ var hit = () => {
     finishGame("You bust!");
   }
 }
+
+var stand = () => {
+  while (countHand(dealerHand) < 17) {
+    addCard("dealer");
+  }
+  if (countHand(dealerHand) > 21) {
+    finishGame("You won!");
+  } else if (countHand(dealerHand) == countHand(playerHand)) {
+    finishGame("Draw!");
+  } else if (countHand(dealerHand) > countHand(playerHand)) {
+    finishGame("You lost!");
+  } else if (countHand(dealerHand) < countHand(playerHand)) {
+    finishGame("You won!");
+  }
+}
