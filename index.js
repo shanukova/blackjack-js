@@ -15,6 +15,7 @@ const VALUES = [
   "Q",
   "K"
 ]
+
 var dealerHand = [];
 var playerHand = [];
 
@@ -101,10 +102,27 @@ var stand = () => {
   }
 }
 
-// Step 7: Create finishGame function to set result, activate start section, remove game section, emty hands, deck, all <li>, "txt-score"
+// Step 7: Create letsPlay function to set 2 cards for players, activate game section and remove let's-play btn
+var letsPlay = () => {
+  addCard("dealer");
+  addCard("dealer");
+  addCard("player");
+  addCard("player");
+  document.getElementById("game").classList.add("active");
+  document.getElementById("start").style.display = "none";
+  if ((countHand(playerHand) == 21) && (countHand(dealerHand) == 21)) {
+    finishGame("Draw!");
+  } else if (countHand(dealerHand) == 21) {
+    finishGame("You lost!");
+  } else if (countHand(playerHand) == 21) {
+    finishGame("You won!");
+  }
+}
+
+// Step 8: Create finishGame function to set result, activate start section, remove game section, emty hands, deck, all <li>, "txt-score"
 var finishGame = (result) => {
   document.getElementById("txt-score").innerHTML = result;
-  setTimeout(function () {
+  setTimeout(function(){
     document.getElementById("game").classList.remove("active");
     document.getElementById("start").style.display = "block";
     dealerHand = [];
@@ -113,7 +131,7 @@ var finishGame = (result) => {
     document.getElementById("txt-score").innerHTML = "";
     let allLi = document.querySelectorAll("li");
     for (let i = allLi.length - 1; i >= 0; --i) {
-      allLi[i].remove();
+    allLi[i].remove();
     }
   }, 2000);
 }
