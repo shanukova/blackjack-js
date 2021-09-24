@@ -100,3 +100,20 @@ var stand = () => {
     finishGame("You won!");
   }
 }
+
+// Step 7: Create finishGame function to set result, activate start section, remove game section, emty hands, deck, all <li>, "txt-score"
+var finishGame = (result) => {
+  document.getElementById("txt-score").innerHTML = result;
+  setTimeout(function () {
+    document.getElementById("game").classList.remove("active");
+    document.getElementById("start").style.display = "block";
+    dealerHand = [];
+    playerHand = [];
+    newDeck = getDeck();
+    document.getElementById("txt-score").innerHTML = "";
+    let allLi = document.querySelectorAll("li");
+    for (let i = allLi.length - 1; i >= 0; --i) {
+      allLi[i].remove();
+    }
+  }, 2000);
+}
